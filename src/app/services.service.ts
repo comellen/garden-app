@@ -54,4 +54,9 @@ export class ServicesService {
       return of(result as T);
     };
   }
+
+  logout() {
+   
+    localStorage.removeItem('currentUser');
+}
 }

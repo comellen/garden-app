@@ -30,6 +30,7 @@ export class ServicesService {
   }
 
   deleteProduct(id): Observable<any> {
+
     return this.http.delete<any>(endpoint + '/' + id, httpOptions).pipe(
       tap(_ => console.log(`deleted product id=${id}`)),
       catchError(this.handleError<any>('deleteProduct'))

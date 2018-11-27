@@ -1,8 +1,11 @@
-<div class = "deck">
-  <div class = "card">
-    <div class = "cardContainer">
-      <h1> {{_products.product_name}}</h1>
-        <p> {{_products.product_description}}</p>
-        <h3>{{_products.product_price</h3>
-    </div>
-  </div>
+<div class="row" style="width: 100%; align-content: center;">
+    <div class="card col-sm-4" style="margin: .5em auto;
+    padding: .5em; margin-left: .5em;" *ngFor="let product of products">
+      <h1>{{product.product_name}}</h1>
+      <p>{{product.product_description}}</p>
+      <h3>{{product.product_price}}</h3>
+    
+  
+  <button *ngIf = "token" (cilck) = "deleteProduct(product.id); getProducts()"></button>
+</div>
+</div>

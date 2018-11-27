@@ -7,7 +7,8 @@ import { Auth } from './models/auth'
 const endpoint = 'https://efa-gardenapp-backend.herokuapp.com/api/product'
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': JSON.parse(localStorage.getItem('token'))
   })
 };
 
@@ -23,39 +24,33 @@ export class ServicesService {
     return body || {};
   }
 
-
-
   getProducts(): Observable<any> {
-    return this.http.get(endpoint + 'products').pipe(
+    return this.http.get(endpoint).pipe(
       map(this.extractData));
   }
+
   deleteProduct(id): Observable<any> {
-    return this.http.delete<any>(endpoint + 'products/' + id, httpOptions).pipe(
+    return this.http.delete<any>(endpoint + '/' + id, httpOptions).pipe(
       tap(_ => console.log(`deleted product id=${id}`)),
       catchError(this.handleError<any>('deleteProduct'))
     );
   }
 
+  login(email:string, password:string){
+    return this.http.post<any>('https://efa-gardenapp-backend.herokuapp.com/api/auth/login', {email: email, password: password})
+      .pipe(map(user => {
+        if (user) {
+          localStorage.setItem('token', JSON.stringify(user.token));
+        }
+        return user;
+      }));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
-
       console.error(error);
-
-      // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 }
-
-
-
- //delete
-
- //get products
-
- //login/auth
- //login/auth

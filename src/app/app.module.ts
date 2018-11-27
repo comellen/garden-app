@@ -12,9 +12,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    NgModule,
     FormsModule
   ],
   providers: [],

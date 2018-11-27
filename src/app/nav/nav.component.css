@@ -1,0 +1,12 @@
+.navbar-inner{
+  position:relative;
+  padding-left:70px;
+}
+.navbar-brand {
+  position: absolute;
+  left: 0px;
+  top: -55px;
+  width: 50px;
+  margin-left: 0px;
+  padding: 10px;
+}

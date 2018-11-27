@@ -27,7 +27,6 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    NgModule,
     FormsModule
   ],
   providers: [],

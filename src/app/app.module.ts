@@ -19,8 +19,7 @@ import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveF
     ProductsComponent,
     LoginComponent,
     AboutComponent,
-    HomeComponent,
-
+    HomeComponent
   ],
   imports: [
     BrowserModule,

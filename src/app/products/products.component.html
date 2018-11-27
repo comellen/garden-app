@@ -1,11 +1,9 @@
 <div class="row" style="width: 100%; align-content: center;">
-    <div class="card col-sm-4" style="margin: .5em auto;
-    padding: .5em; margin-left: .5em;" *ngFor="let product of products">
-      <h1>{{product.product_name}}</h1>
-      <p>{{product.product_description}}</p>
-      <h3>{{product.product_price}}</h3>
-    
-  
-  <button *ngIf = "token" (cilck) = "deleteProduct(product.id); getProducts()"></button>
-</div>
+  <div class="card col-sm-4" style="margin: .5em auto;
+  padding: .5em; margin-left: .5em;" *ngFor="let product of products">
+    <h1>{{product.product_name}}</h1>
+    <p>{{product.product_description}}</p>
+    <h3>${{product.product_price}}</h3>
+    <button *ngIf="localStorage.getItem(token)" (click)="deleteProduct(product.id); getProducts()">x</button>
+  </div>
 </div>

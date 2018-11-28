@@ -1,1 +1,33 @@
+.card {
+  margin: 5px;
 
+  }
+
+  .row {
+    margin-top: 20px;
+    margin-left: 250px;
+  }
+
+  .card-footer {
+    text-align: center;
+    color: #4b6655
+  }
+  .border-success {
+    color: #4b6655
+  }
+
+  .card-header{
+    text-align: center;
+
+  }
+
+h1 {
+ color: #4b6655
+}
+
+p{
+  color: #4b6655
+}
+h3 {
+  color: #4b6655
+}

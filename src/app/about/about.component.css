@@ -1,7 +1,25 @@
 #abouttyler {
-    padding: .5em;
+    margin: 2em 0 1em .5em;
+    color: #4b6655;
+}
+
+.abouttext {
+    padding: 0 2em 0 6em;
 }
 
 #tylerpic {
-    margin: 1em;
+    border-radius: 80%;
+    margin: 0 0 1em 6em;
+}
+
+#emailadd {
+    width: 400px;
+}
+
+#emailmess {
+    width: 500px;
+}
+
+.toppee {
+    margin-top: 3em;
 }

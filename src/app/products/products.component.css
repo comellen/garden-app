@@ -18,6 +18,8 @@
 
   .card-header{
     text-align: center;
+    margin-top: .5em;
+    border-radius: 0;
 
   }
 
@@ -34,7 +36,4 @@ h3 {
 .card-header {
 text-align: center;
 color: #4b6655;
-}
-.body {
-  background: url('https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg')
 }

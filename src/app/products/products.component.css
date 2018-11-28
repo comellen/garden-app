@@ -15,6 +15,12 @@
   .border-success {
     color: #4b6655
   }
+
+  .card-header{
+    text-align: center;
+
+  }
+
 h1 {
  color: #4b6655
 }

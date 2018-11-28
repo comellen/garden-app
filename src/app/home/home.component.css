@@ -15,14 +15,15 @@ h1 {
 }
 
 p {
-  color: #F3541D;
+  color:	whitesmoke ;
   position: absolute;
   left: 0px;
-  top: 300px;
+  top: 350px;
 
-  margin-left: 500px;
+  margin-left: 300px;
   padding: 10px;
-  font-family: '';
+  font-family: 'ampu';
+  font-size: 1.5em;
 }
 
 

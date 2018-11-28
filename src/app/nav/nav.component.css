@@ -1,7 +1,9 @@
 .navbar-inner{
   position:relative;
   padding-left:70px;
+  margin-top: 1em;
 }
+
 .navbar-brand {
   position: absolute;
   left: 0px;
@@ -9,4 +11,8 @@
   width: 50px;
   margin-left: 0px;
   padding: 10px;
+}
+
+.navimg {
+  padding-top: .5em;
 }

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private servicesService: ServicesService) {}
-     
+
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -31,20 +31,19 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-        
-         this.servicesService.logout();
 
-      
+
+
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
-  
+
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
         this.submitted = true;
 
-       
+
         if (this.loginForm.invalid) {
             return;
         }

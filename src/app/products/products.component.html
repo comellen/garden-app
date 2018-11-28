@@ -1,10 +1,14 @@
-<div class="row" >
-  <div class="card col-sm-4"  *ngFor="let product of products">
+  <div class="body">
+  <div class="row">
+  <div class="card border-success col-sm-3 mt-3 rounded bg-light " *ngFor="let product of products">
       <div *ngIf="token !== null || undefined">
           <button (click)="delete(product.id)" style="float: right; width: 24px; text-align: center;">x</button>
           </div>
-    <h1>{{product.product_name}}</h1>
-    <p>{{product.product_description}}</p>
-    <h3>{{product.product_price}}</h3>
+          <div class="card-body text-success">
+    <h1 class="card-header bg-transparent border-success">{{product.product_name}}</h1>
+    <p class="card-text">{{product.product_description}}</p>
+    <h3 class="card-footer bg-transparent border-success">{{product.product_price}}</h3>
+  </div>
   </div>
 </div>
+  </div>

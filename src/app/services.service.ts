@@ -71,6 +71,6 @@ export class ServicesService {
 
   logout() {
    
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
 }
 }

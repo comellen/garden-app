@@ -31,13 +31,14 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-
-
+       
+        this.servicesService.logout();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/products';
     }
 
 
     get f() { return this.loginForm.controls; }
+  
 
     onSubmit() {
         this.submitted = true;
@@ -59,4 +60,5 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
+   
 }

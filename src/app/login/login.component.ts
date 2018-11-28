@@ -7,9 +7,9 @@ import { first } from 'rxjs/operators';
 import { ServicesService } from '../services.service'
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -22,28 +22,21 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private servicesService: ServicesService) {}
-
+        private servicesService: ServicesService) { }
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required]
         });
-
-       
         this.servicesService.logout();
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/products';
     }
 
-
     get f() { return this.loginForm.controls; }
-  
 
     onSubmit() {
         this.submitted = true;
-
-
         if (this.loginForm.invalid) {
             return;
         }
@@ -60,5 +53,4 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
-   
 }

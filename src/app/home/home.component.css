@@ -4,13 +4,26 @@ body {
 }
 
 h1 {
+  color: #F3541D;
   position: absolute;
   left: 0px;
-  top: 105px;
+  top: 65px;
   width: 50px;
   margin-left: 600px;
   padding: 10px;
   font-family: 'ampu';
+}
+
+p {
+  color:	whitesmoke ;
+  position: absolute;
+  left: 0px;
+  top: 350px;
+
+  margin-left: 300px;
+  padding: 10px;
+  font-family: 'ampu';
+  font-size: 1.5em;
 }
 
 

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators'
 import { Auth } from './models/auth'
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 const endpoint = 'https://efa-gardenapp-backend.herokuapp.com/api/product'
 const httpOptions = {
@@ -15,9 +16,23 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesService {
 
-  constructor(private http: HttpClient) { }
+export class ServicesService {
+  user: FormGroup;
+  thisUser: any = [];
+
+  constructor(private http: HttpClient, private FormBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.user = this.FormBuilder.group({
+      email: new FormControl(),
+      password: new FormControl()
+    });
+  }
+
+  setToken(){
+    localStorage.setItem('token', this.thisUser.token);
+  }
 
   private extractData(res: Response) {
     let body = res;
@@ -36,8 +51,8 @@ export class ServicesService {
     );
   }
 
-  login(email:string, password:string){
-    return this.http.post<any>('https://efa-gardenapp-backend.herokuapp.com/api/auth/login', {email: email, password: password})
+  login(email: string, password: string) {
+    return this.http.post<any>('https://efa-gardenapp-backend.herokuapp.com/api/auth/login', { email: email, password: password })
       .pipe(map(user => {
         if (user) {
           localStorage.setItem('token', JSON.stringify(user.token));
@@ -53,4 +68,9 @@ export class ServicesService {
       return of(result as T);
     };
   }
+
+  logout() {
+   
+    localStorage.removeItem('token');
+}
 }

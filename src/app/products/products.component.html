@@ -1,3 +1,11 @@
-<div *ngIf="products" class="deck">
 
+<div class="row" >
+  <div class="card col-sm-4"  *ngFor="let product of products">
+      <div *ngIf="token !== null || undefined">
+          <button (click)="delete(product.id)" style="float: right; width: 24px; text-align: center;">x</button>
+          </div>
+    <h1>{{product.product_name}}</h1>
+    <p>{{product.product_description}}</p>
+    <h3>{{product.product_price}}</h3>
+  </div>
 </div>

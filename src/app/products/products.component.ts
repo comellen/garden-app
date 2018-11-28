@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  token: string = localStorage.getItem('token');
   products: any = [];
 
   constructor(public service: ServicesService, private route: ActivatedRoute, private router: Router) { }
@@ -34,4 +34,6 @@ export class ProductsComponent implements OnInit {
       }
       );
   }
+
+  
 }

@@ -1,0 +1,30 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin-top: 1em;
+  background: #D6F8DE !important ;
+}
+
+p {
+  color:	#4B6655 ;
+  position: absolute;
+  left: 0px;
+  top: 22em;
+
+  margin-left: 10em;
+  padding: 10px;
+  font-family: 'ampu';
+  font-size: 1.5em;
+}
+
+a {
+  margin-left: 24em;
+  align-content: center;
+}
+
+
+@font-face {
+  font-family: 'ampu';
+src: url('/assets/Ambar Pearl Personal Use.ttf');
+}
+
